@@ -19,13 +19,13 @@ const __main = () => {
         window.fps = Number(input.value)
     })
     var images = {
-        ball: 'ball.png',
-        block: 'block.png',
-        paddle: 'paddle.png',
+        ball: 'image/ball.png',
+        block: 'image/block.png',
+        paddle: 'image/paddle.png',
     }
 
-    var game = game1(30, images, function(g) {
-        var s = Scene(g)
+    var game = new Game(30, images, function(g) {
+        var s = new SceneTitle(g)
         g.runWithScene(s)
     })
 
