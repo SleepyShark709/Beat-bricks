@@ -18,6 +18,11 @@ const __main = () => {
         let input = event.target
         window.fps = Number(input.value)
     })
+    // 这个地方是给下拉框增加了一个选择关卡的功能
+    let select = document.querySelector('#id-select-level')
+    for (let i = 0; i < levels.length; i++) {
+        select.options.add(new Option(`第${i + 1}关`, `${i + 1}`))
+    }
     var images = {
         ball: 'image/ball.png',
         block: 'image/block.png',

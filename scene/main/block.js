@@ -8,6 +8,7 @@ const Block = function(game, position) {
         y: p[1],
         alive: true,
         lifes: p[2] || 1,
+        blockDrag: false,
     }
     o.image = img.image
     o.w = img.width
@@ -20,6 +21,11 @@ const Block = function(game, position) {
     }
     o.pengzhuang = (ball) => {
         return o.alive && (reactIntersects(o, ball) || reactIntersects(ball ,o))
+    }
+    o.hasPonit = (x, y) => {
+        var xIn = x >= o.x && x <= o.width + o.x
+        var yIn = y >= o.y && y <= o.y + o.height
+        return xIn && yIn
     }
     return o
 }

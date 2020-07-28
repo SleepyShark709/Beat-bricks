@@ -1,13 +1,5 @@
 const Ball = function(game) {
     let o = game.imageByName('ball')
-    // var o = {
-    //     image: image,
-    //     x: 100,
-    //     y: 200,
-    //     speedX: 5,
-    //     speedY: 5,
-    //     fired: false,
-    // }
     o.x = 100
     o.y = 240
     o.speedX = 5
