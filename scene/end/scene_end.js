@@ -8,6 +8,7 @@ class SceneEnd extends GameScene{
         })
     }
     draw() {
+        this.game.context.fillStyle = 'black'
         this.game.context.fillText('游戏结束，按r重新开始游戏', 100, 190)
     }
 }

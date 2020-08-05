@@ -27,6 +27,8 @@ const __main = () => {
         ball: 'image/ball.png',
         block: 'image/block.png',
         paddle: 'image/paddle.png',
+        background: 'image/打砖块背景.png',
+
     }
 
     var game = new Game(30, images, function(g) {

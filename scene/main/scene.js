@@ -1,3 +1,10 @@
+const BackGround = (game) => {
+    let o = game.imageByName('background')
+    o.x = 0
+    o.y = 0
+    return o
+
+}
 const Scene = (game) => {
     var s = {
         game: game,
@@ -8,6 +15,7 @@ const Scene = (game) => {
     let select = document.querySelector('#id-select-level')
     let index = select.selectedIndex
     var Blocks = loadLevel(game, select.options[index].value)
+    var background = BackGround(game)
     log('选择的关卡', select.options[index].value)
     log('在main的scene中的Blocks', Blocks)
     // 下面是通过点击添加砖块按钮给画布上生成一个砖块 默认位置是[0, 0]
@@ -140,6 +148,7 @@ const Scene = (game) => {
         // 画背景
         game.context.fillStyle = "brown"
         game.context.fillRect(0, 0, 400, 300)
+        game.drawImage(background)
         game.drawImage(paddle)
         game.drawImage(ball)
         for (let i = 0; i < Blocks.length; i++) {
@@ -148,8 +157,9 @@ const Scene = (game) => {
                 game.drawImage(block)
             }
         }
-        game.context.fillstyle = '#000000'
-        game.context.fillText('分数' + score, 10, 200)
+        game.context.font = '18px serif'
+        game.context.fillStyle = 'white'
+        game.context.fillText('分数' + score, 10, 280)
     }
     s.update = () => {
         if (pause) {
